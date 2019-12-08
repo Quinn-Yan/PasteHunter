@@ -153,22 +153,7 @@
     "format": "%(asctime)s [%(threadName)-12.12s] %(levelname)s:%(message)s"
   },
   "general": {
-    "run_frequency": 300,
-    "process_timeout": 5
-  },
-  "sandboxes": {
-    "cuckoo": {
-      "enabled": false,
-      "module": "sandboxes.cuckoo",
-      "api_host": "127.0.0.1",
-      "api_port": 8080
-    },
-    "viper": {
-      "enabled": false,
-      "module": "sandboxes.viper",
-      "api_host": "127.0.0.1",
-      "api_port": 8080
-    }
+    "run_frequency": 300
   },
   "post_process": {
     "post_email": {
@@ -179,7 +164,17 @@
     "post_b64": {
       "enabled": true,
       "module": "postprocess.post_b64",
-      "rule_list": ["b64_exe", "b64_rar", "b64_zip", "b64_gzip"]
+      "rule_list": ["b64_exe", "b64_rar", "b64_zip", "b64_gzip"],
+      "cuckoo": {
+        "enabled": false,
+        "api_host": "127.0.0.1",
+        "api_port": 8080
+      },
+      "viper": {
+        "enabled": false,
+        "api_host": "127.0.0.1",
+        "api_port": 8080
+      }
     },
     "post_entropy": {
       "enabled": false,
